@@ -1,1 +1,1 @@
-# N-QueensProblemGrupi8
+# N-Queens Problem Grupi8
