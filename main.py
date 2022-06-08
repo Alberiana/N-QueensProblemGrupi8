@@ -21,4 +21,17 @@ def main():
                     while True: 
                         print_solutions = input('Do you want the solutions to be printed (Y/N): ').lower()
                         bfs_solutions = n_queens.solve_bfs()
+                        if(print_solutions=='y'):
+                                for i, solution in enumerate(bfs_solutions):
+                                    print('BFS Solution %d:' % (i + 1))
+                                    n_queens.print(solution)
+                                print('\nTotal BFS solutions: %d\n' % len(bfs_solutions))
+                                break
 
+                        elif(print_solutions=='n'):
+                            print('\nTotal BFS solutions: %d\n' % len(bfs_solutions))
+                            break
+
+                        else: 
+                            print('You should only type Y or N!\n') 
+                    break     
