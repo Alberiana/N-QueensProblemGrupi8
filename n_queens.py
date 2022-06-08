@@ -53,3 +53,11 @@ def solve_bfs(self):
                 if a == c or b == d or abs(a - c) == abs(b - d):
                     return True
         return False
+    def print(self, queens):
+        for i in range(self.size):
+            print(' ---' * self.size)
+            for j in range(self.size):
+                p = 'Q' if (i, j) in queens else ' '
+                print('| %s ' % p, end='')
+            print('|')
+        print(' ---' * self.size)
