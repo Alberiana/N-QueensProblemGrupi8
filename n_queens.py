@@ -45,3 +45,11 @@ def solve_bfs(self):
                 queens.append(queen)
                 queue.put(queens)
         return solutions
+    def conflict(self, queens):
+        for i in range(1, len(queens)):
+            for j in range(0, i):
+                a, b = queens[i]
+                c, d = queens[j]
+                if a == c or b == d or abs(a - c) == abs(b - d):
+                    return True
+        return False
