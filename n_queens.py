@@ -24,3 +24,14 @@ class NQueens:
                 queens.append(queen)
                 stack.append(queens)
         return solutions
+ 
+def solve_bfs(self):
+        if self.size < 1:
+            return []
+        solutions = []
+        queue = Queue()
+        queue.put([])
+        while not queue.empty():
+            solution = queue.get()
+            if self.conflict(solution):
+                continue
