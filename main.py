@@ -20,7 +20,11 @@ def main():
                 if(chooseAlgorithm=="bfs"):
                     while True: 
                         print_solutions = input('Do you want the solutions to be printed (Y/N): ').lower()
+                        start = time.time()
+                        time.process_time()
                         bfs_solutions = n_queens.solve_bfs()
+                        elapsed = time.time() - start
+
                         if(print_solutions=='y'):
                                 for i, solution in enumerate(bfs_solutions):
                                     print('BFS Solution %d:' % (i + 1))
@@ -41,7 +45,10 @@ def main():
                      elif(chooseAlgorithm=="dfs"):
                      while True: 
                         print_solutions = input('Do you want the solutions to be printed (Y/N): ').lower() 
+                        start = time.time()
+                        time.process_time()
                         dfs_solutions = n_queens.solve_dfs()
+                        elapsed = time.time() - start
 
                         if(print_solutions=='y'):
                             for i, solution in enumerate(dfs_solutions):
@@ -60,6 +67,10 @@ def main():
                             
                 else:
                     print('You should only type BFS or DFS!\n')
+
+            minutes = int(elapsed//60)
+            hours = int(elapsed // 3600)
+            print("Time: ", hours,":",minutes,":",(round(elapsed, 4))%60)
                 
         except ValueError:
             print("You should only enter an integer number of queens or exit to stop the program!\n")
