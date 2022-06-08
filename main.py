@@ -35,3 +35,17 @@ def main():
                         else: 
                             print('You should only type Y or N!\n') 
                     break     
+
+                    
+                    
+                     elif(chooseAlgorithm=="dfs"):
+                     while True: 
+                        print_solutions = input('Do you want the solutions to be printed (Y/N): ').lower() 
+                        dfs_solutions = n_queens.solve_dfs()
+
+                        if(print_solutions=='y'):
+                            for i, solution in enumerate(dfs_solutions):
+                                print('DFS Solution %d:' % (i + 1))
+                                n_queens.print(solution)
+                            print('\nTotal DFS solutions: %d\n' % len(dfs_solutions))
+                            break
