@@ -49,3 +49,20 @@ def main():
                                 n_queens.print(solution)
                             print('\nTotal DFS solutions: %d\n' % len(dfs_solutions))
                             break
+                            
+                             elif(print_solutions=='n'):
+                            print('\nTotal DFS solutions: %d\n' % len(dfs_solutions))
+                            break
+                        
+                        else: 
+                            print('You should only type Y or N!\n')
+                     break
+                            
+                else:
+                    print('You should only type BFS or DFS!\n')
+                
+        except ValueError:
+            print("You should only enter an integer number of queens or exit to stop the program!\n")
+    
+if __name__ == '__main__':
+    main()
