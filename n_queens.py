@@ -1,12 +1,12 @@
-from queue import Queue
+from queue import Queue 
 
-class NQueens:
+class NQueens: 
 
-    def __init__(self, size):
-        self.size = size
+    def __init__(self, size): 
+        self.size = size 
 
-    def solve_dfs(self):
-        if self.size < 1:
+    def solve_dfs(self): 
+        if self.size < 1: 
             return []
         solutions = []
         stack = [[]]
@@ -46,7 +46,7 @@ class NQueens:
                     queue.put(queens)
             return solutions
 
-    def conflict(self, queens):
+    def conflict(self, queens): 
         for i in range(1, len(queens)):
             for j in range(0, i):
                 a, b = queens[i]
@@ -58,7 +58,7 @@ class NQueens:
     def print(self, queens):
         for i in range(self.size):
             print(' ---' * self.size)
-            for j in range(self.size):
+            for j in range(self.size): 
                 p = 'Q' if (i, j) in queens else ' '
                 print('| %s ' % p, end='')
             print('|')
