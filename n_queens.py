@@ -6,8 +6,6 @@ class NQueens:
         self.size = size 
 
     def solve_dfs(self): 
-        if self.size < 1: 
-            return []
         solutions = []
         stack = [[]]
         while stack:
@@ -26,8 +24,6 @@ class NQueens:
         return solutions
  
     def solve_bfs(self):
-            if self.size < 1:
-                return []
             solutions = []
             queue = Queue()
             queue.put([])
